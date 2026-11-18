@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>102 部門應用程式網站 V3.0 (102 Departmental Application Index v3.0)</title>
+    <title>102 部門應用程式網站 V4.0 (102 Departmental Application Index v4.0)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
     <style>
@@ -207,8 +207,8 @@
     </button>
 
     <div class="header-container">
-        <h1>🏢 102 部門應用程式索引 V3.0</h1>
-        <div class="subheader">102 Departmental Application Index v3.0</div>
+        <h1>🏢 102 部門應用程式索引 V4.0</h1>
+        <div class="subheader">102 Departmental Application Index v4.0</div>
     </div>
 
     <div id="main-container"></div>
@@ -226,7 +226,7 @@
                 <h3>新增項目</h3>
                 <label>選擇群組</label>
                 <select id="new-group-select">
-                    <option value="0">第一組 (機械故障訊息)</option>
+                    <option value="0">第一組 (應用程式測試)</option>
                     <option value="1">第二組 (庫存盤點)</option>
                     <option value="2">第三組 (5S查核)</option>
                     <option value="3">第四組 (保養查核)</option>
@@ -259,41 +259,34 @@
 
         const defaultData = [
             {
-                title: "機械故障訊息 (Machine NG INFO)",
+                title: "應用程式測試 (PRO TEST )",
                 items: [
-                    { en: "Machine NG MX", cn: "混練故障訊息", url: "https://dereklin1429.github.io/Machine-NG-MX/", icon: "fa-exclamation-triangle" },
-                    { en: "Machine NG CL", cn: "上膠故障訊息", url: "https://dereklin1429.github.io/Machine-NG-CL/", icon: "fa-exclamation-triangle" },
-                    { en: "Machine NG EX", cn: "押出故障訊息", url: "https://dereklin1429.github.io/Machine-NG-EX/", icon: "fa-exclamation-triangle" },
-                    { en: "Machine NG CT", cn: "裁斷故障訊息", url: "https://dereklin1429.github.io/Machine-NG-CT/", icon: "fa-exclamation-triangle" }
+                    { en: "OG Inventory Manager", cn: "OG半製品膠料庫存", url: "https://dereklin1429.github.io/Inventory-Dashboard-main-V3/", icon: "fa-list-check" },
+                     { en: "OG Monthly scrap", cn: "OG每月材料報廢紀錄", url: "http://10.90.33.36:3001/", icon: "fa-book" } ,
+                    { en: "Daily Scrap Report", cn: "每日報廢資料", url: "https://dereklin1429.github.io/Scrap-everyday-MRI/", icon: "fa-book" },
+                    { en: "STD DATA", cn: "作業標準清單", url: "http://10.90.33.36:3005/", icon: "fa-clipboard-check" },
+                     { en: "BD Semi_Material Inventory", cn: "BD半製品庫存", url: "http://10.90.33.35:5001/", icon: "fa-clipboard-check" },
+                     { en: "RW WH Inventory", cn: "原物料倉庫", url: "https://dereklin1429.github.io/derekrmwnInventory01/", icon: "fa-warehouse" }
+
                 ]
             },
             {
                 title: "庫存盤點 (Inventory)",
                 items: [
-                    { en: "Mixing Inventory", cn: "混練盤點", url: "https://dereklin1429.github.io/derekmxInventory02/", icon: "fa-cubes" },
-                    { en: "Extrusion Inventory", cn: "押出盤點", url: "https://dereklin1429.github.io/derekexInventory02/", icon: "fa-layer-group" },
-                    { en: "Calendering Inventory", cn: "上膠盤點", url: "https://dereklin1429.github.io/derekclInventory02/", icon: "fa-scroll" },
-                    { en: "CUTTING Inventory", cn: "裁斷盤點", url: "https://dereklin1429.github.io/derekctInventory02/", icon: "fa-cut" },
-                    { en: "RW WH Inventory", cn: "原物料倉庫", url: "https://dereklin1429.github.io/derekrmwnInventory01/", icon: "fa-warehouse" }
+                    { en: "Mixing Inventory", cn: "混練盤點", url: "https://dereklin1429.github.io/derekmxInventory02/", icon: "fa-cubes" }
+                   
                 ]
             },
             {
                 title: "5S查核 (5S-audit)",
                 items: [
                     { en: "5S audit MX", cn: "混練5S稽核", url: "https://dereklin1429.github.io/5S-audit_MX/", icon: "fa-tasks" },
-                    { en: "5S audit CL", cn: "上膠5S稽核", url: "https://dereklin1429.github.io/5S-audit_CL/", icon: "fa-tasks" },
-                    { en: "5S audit EX", cn: "押出5S稽核", url: "https://dereklin1429.github.io/5S-audit-EX/", icon: "fa-tasks" },
-                    { en: "5S audit CT", cn: "裁斷5S稽核", url: "https://dereklin1429.github.io/5S-audit-CT/", icon: "fa-tasks" },
-                    { en: "5S audit WH", cn: "倉庫5S稽核", url: "https://dereklin1429.github.io/5S-audit-WH/", icon: "fa-tasks" }
                 ]
             },
             {
                 title: "保養查核 (Maintenance)",
                 items: [
                     { en: "MX Maintenance", cn: "混練保養查核", url: "https://dereklin1429.github.io/M-C-maintenance-MX/", icon: "fa-cogs" },
-                    { en: "CT Maintenance", cn: "裁斷保養查核", url: "https://dereklin1429.github.io/Maintenance-CT/", icon: "fa-file-alt" },
-                    { en: "EX Maintenance", cn: "押出保養查核", url: "https://dereklin1429.github.io/M-C_Maintenance-EX/", icon: "fa-clipboard-check" },
-                    { en: "CL Maintenance", cn: "上膠保養查核", url: "https://dereklin1429.github.io/MC-Maintenance-CL/", icon: "fa-list-ol" },
                     { en: "Container MM Info", cn: "貨櫃管理資訊", url: "https://dereklin1429.github.io/Vehicle-Management/", icon: "fa-truck" }
                 
                     
@@ -309,12 +302,10 @@
                 title: "圖表分析 (Chart Analysis)",
                 items: [
 
-                    { en: "BD Semi_Material Inventory", cn: "半製品庫存", url: "http://10.90.33.35:5001/", icon: "fa-clipboard-check" },
                     { en: "Car Live Status", cn: "車輛動態管理", url: "https://dereklin1429.github.io/Intelligent-Container-Logistics-Dashboard-v6/", icon: "fa-chart-line" },
                     { en: "AOT Schedule", cn: "AOT 計畫表", url: "https://dereklin1429.github.io/project-mon-aot-v.02/", icon: "fa-project-diagram" },
-                    { en: "SCRAP DATA", cn: "材料報廢紀錄", url: "https://dereklin1429.github.io/Monthly-Scrap-Data-V3.0/", icon: "fa-book" },
-                    { en: "Daily Scrap Report", cn: "每日報廢資料", url: "https://dereklin1429.github.io/Scrap-everyday-MRI/", icon: "fa-book" },
-                    { en: "Semi_Rubber inventory", cn: "半製品膠料庫存", url: "https://dereklin1429.github.io/Inventory-Dashboard/", icon: "fa-list-check" }
+            
+                   
                 ]
             }
         ];
